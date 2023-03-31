@@ -43,19 +43,19 @@ const Navbar = ()=> {
                 <View style={styles.tabs}>
                     <Pressable
                         style={styles.singleTab}
-                        android_ripple={{color:'grey'}}
+                        android_ripple={{color:'rgb(100,175,100)'}}
                     >
                         <Text style={styles.textTab}>Chats</Text>
                     </Pressable>
                     <Pressable
                         style={styles.singleTab}
-                        android_ripple={{color:'grey'}}
+                        android_ripple={{color:'rgb(100,175,100)'}}
                     >
                         <Text style={styles.textTab}>Status</Text>
                     </Pressable>
                     <Pressable
                         style={styles.singleTab}
-                        android_ripple={{color:'grey'}}
+                        android_ripple={{color:'rgb(100,175,100)'}}
                     >
                         <Text style={styles.textTab}>Calls</Text>
                     </Pressable>
