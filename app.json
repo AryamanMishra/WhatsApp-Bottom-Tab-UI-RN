@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "notWhatsapp",
-    "slug": "notWhatsapp",
+    "name": "notWhatsApp",
+    "slug": "notwhatsapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
