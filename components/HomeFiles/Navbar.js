@@ -37,9 +37,11 @@ const Navbar = ()=> {
                     size={30}
                     color='#002'
                 />
-                <Text style={styles.textTab}>Chats</Text>
-                <Text style={styles.textTab}>Status</Text>
-                <Text style={styles.textTab}>Calls</Text>
+                <View style={styles.tabs}>
+                    <Text style={styles.textTab}>Chats</Text>
+                    <Text style={styles.textTab}>Status</Text>
+                    <Text style={styles.textTab}>Calls</Text>
+                </View>      
             </View>
         </View>
     )
@@ -47,25 +49,25 @@ const Navbar = ()=> {
 
 const styles = StyleSheet.create({
     navContainer : {
-        flex:1.5,
+        flex:1.55,
         justifyContent:'center',
         borderBottomWidth:0.5,
         borderBottomColor:'green',
-        marginTop:14,
+        marginTop:10,
     },
     upperNav : {
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
-        marginBottom:34,
+        marginBottom:30,
     },
     upperNavOptionsContainer : {
-        paddingRight:17,
+        paddingRight:18,
         flexDirection:'row',
         gap:18
     }, 
     textView : {
-        paddingLeft:17,
+        paddingLeft:18,
     },
     text: {
         fontSize:19,
@@ -75,11 +77,16 @@ const styles = StyleSheet.create({
         fontSize:15,
     },
     lowerNav : {
+        alignItems:'center',
         position:'absolute',
         bottom:4,
         paddingLeft:12,
         flexDirection:'row',
-        gap:65
+        gap:55
+    },
+    tabs : {
+        flexDirection:'row',
+        gap:72
     }
 })
 
