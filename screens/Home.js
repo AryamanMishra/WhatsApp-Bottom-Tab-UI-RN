@@ -1,14 +1,14 @@
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { View,Text,StyleSheet } from 'react-native'
-import Navbar from '../components/HomeFiles/Navbar'
+import Navbar from '../components/Navbar.js'
 import Content from '../components/HomeFiles/Content'
 
 
-const Home = ()=> {
+const Home = ({navigation})=> {
     return (
         <View style={styles.homeContainer}>
-            <Navbar />
+            <Navbar navigation={navigation}/>
             <Content />
             <StatusBar style="auto" />
         </View>

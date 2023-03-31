@@ -1,11 +1,13 @@
 import React from 'react'
-import { View,StyleSheet,Text } from 'react-native'
+import { View,StyleSheet,Text,Pressable } from 'react-native'
 import SearchIcon from 'react-native-vector-icons/Ionicons'
 import CameraIcon from 'react-native-vector-icons/Feather'
 import MenuIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import GroupIcon from 'react-native-vector-icons/MaterialIcons'
 
 const Navbar = ()=> {
+
+    
     return (
         <View style={styles.navContainer}>
             <View style={styles.upperNav}>
@@ -36,11 +38,28 @@ const Navbar = ()=> {
                     name='groups'
                     size={30}
                     color='#002'
+                    style={{paddingVertical:10}}
                 />
                 <View style={styles.tabs}>
-                    <Text style={styles.textTab}>Chats</Text>
-                    <Text style={styles.textTab}>Status</Text>
-                    <Text style={styles.textTab}>Calls</Text>
+                    <Pressable
+                        style={styles.singleTab}
+                        android_ripple={{color:'grey'}}
+                    >
+                        <Text style={styles.textTab}>Chats</Text>
+                    </Pressable>
+                    <Pressable
+                        style={styles.singleTab}
+                        android_ripple={{color:'grey'}}
+                    >
+                        <Text style={styles.textTab}>Status</Text>
+                    </Pressable>
+                    <Pressable
+                        style={styles.singleTab}
+                        android_ripple={{color:'grey'}}
+                    >
+                        <Text style={styles.textTab}>Calls</Text>
+                    </Pressable>
+                    
                 </View>      
             </View>
         </View>
@@ -49,25 +68,25 @@ const Navbar = ()=> {
 
 const styles = StyleSheet.create({
     navContainer : {
-        flex:1.55,
+        backgroundColor:"rgb(190,240,155)",
+        flex:1.7,
         justifyContent:'center',
         borderBottomWidth:0.5,
         borderBottomColor:'green',
-        marginTop:10,
     },
     upperNav : {
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
-        marginBottom:30,
+        marginBottom:20,
     },
     upperNavOptionsContainer : {
-        paddingRight:18,
+        paddingRight:20,
         flexDirection:'row',
         gap:18
     }, 
     textView : {
-        paddingLeft:18,
+        paddingLeft:20,
     },
     text: {
         fontSize:19,
@@ -79,14 +98,20 @@ const styles = StyleSheet.create({
     lowerNav : {
         alignItems:'center',
         position:'absolute',
-        bottom:4,
+        top:'69%',
         paddingLeft:12,
         flexDirection:'row',
-        gap:55
+        gap:35,
     },
     tabs : {
-        flexDirection:'row',
-        gap:72
+        flexDirection:'row',  
+    },
+    singleTab : {
+        width:110,
+        paddingVertical:9,
+        // borderBottomColor:'black',
+        // borderBottomWidth:2,
+        alignItems:'center'
     }
 })
 
