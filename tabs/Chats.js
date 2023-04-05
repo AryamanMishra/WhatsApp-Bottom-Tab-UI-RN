@@ -1,11 +1,23 @@
 import React from 'react'
-import { Text, View,StyleSheet } from 'react-native'
+import { Text, View,StyleSheet,ScrollView } from 'react-native'
+import Chat from '../components/Chat'
 
 
 const Chats = ()=> {
     return (
         <View style={styles.mainChats}>
-            <Text>Chats</Text>
+            <ScrollView>
+                <Chat />
+                <Chat />
+                <Chat />
+                <Chat />
+                <Chat />
+                <Chat />
+                <Chat />
+                <Chat />
+                <Chat />
+                <Chat />
+            </ScrollView>
         </View>
     )
 }
