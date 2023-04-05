@@ -4,10 +4,15 @@ import SearchIcon from 'react-native-vector-icons/Ionicons'
 import CameraIcon from 'react-native-vector-icons/Feather'
 import MenuIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import GroupIcon from 'react-native-vector-icons/MaterialIcons'
+import { useGlobalContext } from '../context'
 
 const Navbar = ()=> {
 
-    
+    const { tab,setTab } = useGlobalContext()
+
+    const handleTabSwitch = (tab)=> {
+        setTab(tab)
+    }
     return (
         <View style={styles.navContainer}>
             <View style={styles.upperNav}>
@@ -42,20 +47,23 @@ const Navbar = ()=> {
                 />
                 <View style={styles.tabs}>
                     <Pressable
-                        style={styles.singleTab}
-                        android_ripple={{color:'rgb(100,175,100)'}}
+                        onPress={()=>handleTabSwitch('Chats')}
+                        style={tab === 'Chats' ? styles.singleTabWithBorder : styles.singleTab}
+                        android_ripple={{color:'rgb(100,185,100)'}}
                     >
                         <Text style={styles.textTab}>Chats</Text>
                     </Pressable>
                     <Pressable
-                        style={styles.singleTab}
-                        android_ripple={{color:'rgb(100,175,100)'}}
+                        onPress={()=>handleTabSwitch('Status')}
+                        style={tab === 'Status' ? styles.singleTabWithBorder : styles.singleTab}
+                        android_ripple={{color:'rgb(100,185,100)'}}
                     >
                         <Text style={styles.textTab}>Status</Text>
                     </Pressable>
                     <Pressable
-                        style={styles.singleTab}
-                        android_ripple={{color:'rgb(100,175,100)'}}
+                        onPress={()=>handleTabSwitch('Calls')}
+                        style={tab === 'Calls' ? styles.singleTabWithBorder : styles.singleTab}
+                        android_ripple={{color:'rgb(100,185,100)'}}
                     >
                         <Text style={styles.textTab}>Calls</Text>
                     </Pressable>
@@ -69,7 +77,7 @@ const Navbar = ()=> {
 const styles = StyleSheet.create({
     navContainer : {
         backgroundColor:"rgb(190,240,155)",
-        flex:1.7,
+        flex:1.57,
         justifyContent:'center',
         borderBottomWidth:0.5,
         borderBottomColor:'green',
@@ -78,15 +86,15 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
-        marginBottom:20,
+        marginBottom:26,
     },
     upperNavOptionsContainer : {
-        paddingRight:20,
+        paddingRight:19,
         flexDirection:'row',
         gap:18
     }, 
     textView : {
-        paddingLeft:20,
+        paddingLeft:19,
     },
     text: {
         fontSize:19,
@@ -98,7 +106,7 @@ const styles = StyleSheet.create({
     lowerNav : {
         alignItems:'center',
         position:'absolute',
-        top:'69%',
+        top:'65.5%',
         paddingLeft:12,
         flexDirection:'row',
         gap:35,
@@ -108,10 +116,15 @@ const styles = StyleSheet.create({
     },
     singleTab : {
         width:110,
-        paddingVertical:9,
-        // borderBottomColor:'black',
-        // borderBottomWidth:2,
-        alignItems:'center'
+        paddingVertical:15,
+        alignItems:'center',
+    },
+    singleTabWithBorder : {
+        width:110,
+        paddingVertical:15,
+        borderBottomColor:'black',
+        borderBottomWidth:2,
+        alignItems:'center',
     }
 })
 

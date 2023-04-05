@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
-import { View,Text,StyleSheet } from 'react-native'
+import { View,StyleSheet } from 'react-native'
 import Navbar from '../components/Navbar.js'
-import Content from '../components/HomeFiles/Content'
+import Chats from '../tabs/Chats.js'
+import Status from '../tabs/Status.js'
+import Calls from '../tabs/Calls.js'
+import { useGlobalContext } from '../context.js'
 
 
 const Home = ({navigation})=> {
+
+    const { tab } = useGlobalContext()
     return (
         <View style={styles.homeContainer}>
             <Navbar navigation={navigation}/>
-            <Content />
+            {
+                tab === 'Chats' ? <Chats /> : tab === 'Status' ? <Status /> : <Calls />
+            }
             <StatusBar style="auto" />
         </View>
     )
