@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         // borderWidth:1,
         marginVertical:10,
         gap:20,
-        paddingHorizontal:15,
+        paddingHorizontal:16,
         paddingVertical:10
     },
     chatOverlay : {

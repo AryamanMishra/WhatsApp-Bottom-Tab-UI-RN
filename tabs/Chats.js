@@ -6,7 +6,8 @@ import Chat from '../components/Chat'
 const Chats = ()=> {
     return (
         <View style={styles.mainChats}>
-            <ScrollView>
+            <ScrollView
+            >
                 <Chat />
                 <Chat />
                 <Chat />
