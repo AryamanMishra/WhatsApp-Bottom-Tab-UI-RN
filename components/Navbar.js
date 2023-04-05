@@ -77,7 +77,7 @@ const Navbar = ()=> {
 const styles = StyleSheet.create({
     navContainer : {
         backgroundColor:"rgb(190,250,155)",
-        flex:1.57,
+        flex:1.5,
         justifyContent:'center',
         borderBottomWidth:0.5,
         borderBottomColor:'green',
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     lowerNav : {
         alignItems:'center',
         position:'absolute',
-        top:'65.5%',
+        top:'64%',
         paddingLeft:12,
         flexDirection:'row',
         gap:35,
