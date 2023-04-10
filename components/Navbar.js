@@ -15,18 +15,18 @@ const Navbar = ()=> {
                 <CameraIcon 
                     name='camera'
                     color='#ffe'
-                    size={24}
+                    size={23}
                 />
                 <SearchIcon 
                     name='search'
                     color='#ffe'
-                    size={23}
+                    size={22}
                     style={{paddingLeft:7.5}}
                 /> 
                 <MenuIcon 
                     name='dots-vertical'
                     color='#ffe'
-                    size={24}
+                    size={23}
                 />
             </View>
         </View>

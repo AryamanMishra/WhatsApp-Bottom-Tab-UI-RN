@@ -1,13 +1,12 @@
 import React from 'react'
 import { View,StyleSheet,ScrollView } from 'react-native'
 import Chat from '../components/Chat'
-import { useGlobalContext } from '../context'
 
 const Chats = ()=> {
 
-    const { tab,previousTab } = useGlobalContext()
+
     return (
-        <View style={previousTab === 'Chats' && previousTab !== tab && previousTab !== null ? styles.mainChatsScroll : styles.mainChats}>
+        <View style={styles.mainChats}>
             <ScrollView
             >
                 <Chat />
@@ -27,10 +26,7 @@ const Chats = ()=> {
 
 const styles = StyleSheet.create({
     mainChats : {
-        // width:'100%'
+        backgroundColor:'rgba(100,100,100,0.1)'
     },
-    mainChatsScroll : {
-        transform:[{translateX:-100}]
-    }
 })
 export default Chats

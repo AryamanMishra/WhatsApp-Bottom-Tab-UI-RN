@@ -6,6 +6,7 @@ import Status from './tabs/Status.js';
 import Calls from './tabs/Calls.js';
 import Navbar from './components/Navbar.js';
 import { StatusBar } from 'expo-status-bar';
+import CustomTabBar from './components/CustomTabBar.js';
 
 
 const Tab = createBottomTabNavigator()
@@ -18,15 +19,18 @@ const App = ()=> {
 					screenOptions={{
 						headerRight:()=><Navbar />,
 						headerStyle:{
-							backgroundColor:'rgb(50,130,90)',
+							backgroundColor:'rgb(50,125,90)',
 						},
 						headerTitleStyle:{
 							color:"#ffe",
+							fontSize:19,
+							letterSpacing:0.3,
 							paddingLeft:5,
 							paddingBottom:8
 						},
 						headerStatusBarHeight:40,
 					}}
+					tabBar={props=><CustomTabBar {...props}/>}
 				>
 					<Tab.Screen name="Chats" component={Chats}/>
 					<Tab.Screen name="Status" component={Status} />
