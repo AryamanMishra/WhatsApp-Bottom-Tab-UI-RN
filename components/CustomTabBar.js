@@ -25,6 +25,7 @@ const CustomTabBar = ({ state, descriptors, navigation })=> {
                             navigation.navigate({ name: route.name, merge: true });
                         }
                     };
+                    
                     return (
                         <Pressable 
                             key={index}
@@ -37,14 +38,14 @@ const CustomTabBar = ({ state, descriptors, navigation })=> {
                                 label === 'Chats' ? (
                                     isFocused ? (
                                         <ChatIcon 
-                                            name='md-chatbox-sharp'
-                                            size={23}
+                                            name='md-chatbox'
+                                            size={25}
                                             color='green'
                                         /> 
                                     ): (
                                         <ChatIcon 
                                         name='md-chatbox-outline'
-                                        size={23}
+                                        size={25}
                                         color='green'
                                         /> 
                                     )
@@ -54,21 +55,21 @@ const CustomTabBar = ({ state, descriptors, navigation })=> {
                                 label === 'Status' ?(
                                     <StatusIcon
                                         name='statusnet'
-                                        size={23}
+                                        size={25}
                                         color={isFocused ? 'rgb(0,100,0)' :'rgb(0,150,0)'}
                                     />
                                 ) :(
                                     isFocused ? (
                                         <CallsIcon 
                                             name='call'
-                                            size={23}
+                                            size={25}
                                             color='green'
                                         />
                                     )
                                     : (
                                         <CallsIcon 
                                             name='call-outline'
-                                            size={23}
+                                            size={25}
                                             color='green'
                                         />
                                     )

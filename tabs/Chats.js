@@ -26,7 +26,7 @@ const Chats = ()=> {
 
 const styles = StyleSheet.create({
     mainChats : {
-        backgroundColor:'rgba(100,100,100,0.1)'
+        backgroundColor:'rgba(200,200,200,0.1)'
     },
 })
 export default Chats
