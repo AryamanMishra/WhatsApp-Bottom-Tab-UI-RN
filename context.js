@@ -7,13 +7,16 @@ const AppContext = React.createContext()
 export const AppProvider = ({children})=> {
     
     const [tab,setTab] = useState('Chats')
+    const [previousTab,setPreviousTab] = useState(null)
     
     return (
 
         <AppContext.Provider
             value={{
                 tab,
-                setTab
+                setTab,
+                previousTab,
+                setPreviousTab
             }}
         >
             {children}

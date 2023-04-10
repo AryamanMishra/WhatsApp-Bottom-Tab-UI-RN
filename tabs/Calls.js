@@ -13,7 +13,6 @@ const Calls = ()=> {
 
 const styles = StyleSheet.create({
     mainCalls : {
-        flex:7
     }
 })
 

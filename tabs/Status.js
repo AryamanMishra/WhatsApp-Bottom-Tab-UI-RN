@@ -12,7 +12,6 @@ const Status = ()=> {
 
 const styles = StyleSheet.create({
     mainStatus : {
-        flex:7
     }
 })
 

@@ -6,7 +6,7 @@ const Chat = ()=> {
     return (
         <Pressable 
             style={styles.singleChat}
-            android_ripple={{color:'rgba(100,100,100,0.2)'}}
+            android_ripple={{color:'rgba(100,100,100,0.15)'}}
         >
             <Image 
                 style={styles.profileImage}
@@ -30,9 +30,9 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         // borderWidth:1,
-        marginVertical:10,
+        marginTop:10,
         gap:20,
-        paddingHorizontal:16,
+        paddingHorizontal:14,
         paddingVertical:10
     },
     chatOverlay : {
