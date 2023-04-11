@@ -6,7 +6,7 @@ const Chat = ()=> {
     return (
         <Pressable 
             style={styles.singleChat}
-            android_ripple={{color:'rgba(100,100,100,0.15)'}}
+            android_ripple={{color:'rgba(100,100,100,0.2)'}}
         >
             <Image 
                 style={styles.profileImage}

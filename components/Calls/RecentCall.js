@@ -1,37 +1,57 @@
 import React from 'react'
 import testImage from '../../assets/testImage.png'
 import ArrowDownLeft from 'react-native-vector-icons/Feather'
-import { Text, View,StyleSheet,Image } from 'react-native'
+import { Text, View,StyleSheet,Image, Pressable } from 'react-native'
+import CallsIcon from 'react-native-vector-icons/Ionicons'
 
 
 const RecentCall = ()=> {
     return (
-        <View style={styles.recentCall}>
-            <View style={styles.yourImage}>
-                <Image 
-                    style={styles.profileImage}
-                    source={testImage}
+        <Pressable
+            android_ripple={{color:'rgba(100,100,100,0.2)'}}
+        >
+            <View style={styles.recentCall}>
+                <View style={styles.recentCallmain}>
+                    <View style={styles.yourImage}>
+                        <Image 
+                            style={styles.profileImage}
+                            source={testImage}
+                        />
+                    </View>
+                    <View style={styles.recentCallText}>
+                        <Text style={styles.largeText}>Aryaman</Text>
+                        <View style={{flexDirection:'row',alignItems:'center',gap:4}}>
+                            <ArrowDownLeft 
+                                name='arrow-down-left'
+                                size={16}
+                                color='red'
+                            />
+                            <Text style={styles.smallText}>Today, 15:34</Text>
+                        </View>  
+                    </View>
+                </View>
+                <CallsIcon 
+                    name='call'
+                    size={23}
+                    color='green'
                 />
             </View>
-            <View style={styles.recentCallText}>
-                <Text style={styles.largeText}>Aryaman</Text>
-                <View style={{flexDirection:'row',alignItems:'center',gap:4}}>
-                    <ArrowDownLeft 
-                        name='arrow-down-left'
-                        size={16}
-                        color='red'
-                    />
-                    <Text style={styles.smallText}>Today, 15:34</Text>
-                </View>  
-            </View>
-        </View>
+        </Pressable>
     )
 }
 
 const styles = StyleSheet.create({
     recentCall : {
         flexDirection:'row',
-        gap:12 
+        justifyContent:'space-between',
+        alignItems:'center',
+        paddingVertical:11,
+        paddingHorizontal:18
+    },
+    recentCallmain : {
+        flexDirection:'row',
+        gap:12 ,
+        alignItems:'center'
     },
     profileImage : {
         width:50,

@@ -1,21 +1,28 @@
 import React from 'react'
-import { View,StyleSheet,Text } from 'react-native'
+import { View,StyleSheet,Text, ScrollView } from 'react-native'
 import RecentUpdate from '../components/Status/RecentUpdate'
 import AddStatus from '../components/Status/AddStatus'
 
 
 const Status = ()=> {
     return (
-        <View style={styles.mainStatus}>
+        <ScrollView style={styles.mainStatus}>
             <AddStatus />
             <View style={styles.recentUpdatesSection}>
                 <Text style={styles.subheadingText}>Recent updates</Text>
                 <View style={styles.recentUpdates}>
                     <RecentUpdate />
                     <RecentUpdate />
+                    <RecentUpdate />
+                    <RecentUpdate />
+                    <RecentUpdate />
+                    <RecentUpdate />
+                    <RecentUpdate />
+                    <RecentUpdate />
+                    <RecentUpdate />
                 </View>
             </View>
-        </View>
+        </ScrollView>
     )
 }
 
@@ -27,16 +34,15 @@ const styles = StyleSheet.create({
     },
     subheadingText : {
         color:'rgba(10,10,10,0.65)',
-        fontSize:13.5,
-        marginLeft:3
+        fontSize:14,
+        marginLeft:18
     },
     recentUpdatesSection : {
-        marginHorizontal:17,
-        marginVertical:17,
+        marginVertical:13,
     },
     recentUpdates : {
-        marginTop:20,
-        gap:22
+        marginTop:12,
+        gap:8
     },
     
 })

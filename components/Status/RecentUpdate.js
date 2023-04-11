@@ -1,22 +1,26 @@
 import React from 'react'
-import { View,Text,Image, StyleSheet } from 'react-native'
+import { View,Text,Image, StyleSheet,Pressable } from 'react-native'
 import testImage from '../../assets/testImage.png'
 
 
 const RecentUpdate = ()=> {
     return (
-        <View style={styles.recentUpdate}>
-            <View style={styles.yourImage}>
-                <Image 
-                    style={styles.profileImage}
-                    source={testImage}
-                />
+        <Pressable
+            android_ripple={{color:'rgba(100,100,100,0.2)'}}
+        >
+            <View style={styles.recentUpdate}>
+                <View style={styles.yourImage}>
+                    <Image 
+                        style={styles.profileImage}
+                        source={testImage}
+                    />
+                </View>
+                <View style={styles.recentUpdateText}>
+                    <Text style={styles.largeText}>Aryaman</Text>
+                    <Text style={styles.smallText}>Today, 15:34</Text>
+                </View>
             </View>
-            <View style={styles.recentUpdateText}>
-                <Text style={styles.largeText}>Aryaman</Text>
-                <Text style={styles.smallText}>Today, 15:34</Text>
-            </View>
-        </View>
+        </Pressable>
     )
 }
 
@@ -24,7 +28,9 @@ const RecentUpdate = ()=> {
 const styles = StyleSheet.create({
     recentUpdate : {
         flexDirection:'row',
-        gap:12 
+        gap:12 ,
+        paddingVertical:11,
+        paddingHorizontal:18
     },
     recentUpdateText : {
         marginTop:2.5,

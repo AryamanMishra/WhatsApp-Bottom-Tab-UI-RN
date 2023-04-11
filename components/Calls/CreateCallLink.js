@@ -5,16 +5,16 @@ import LinkIcon from 'react-native-vector-icons/Fontisto'
 const CreateCallLink = ()=> {
     return (
         <View style={styles.createCallLinkSection}>
-                <LinkIcon 
-                    name='link'
-                    size={20}
-                    color='white'
-                    style={styles.createCallLinkIcon}
-                />
-                <View style={styles.createCallLinkText}>
-                    <Text style={styles.largeText}>Create call link</Text>
-                    <Text style={styles.smallText}>Share a link for your WhatsApp call</Text>
-                </View>
+            <LinkIcon 
+                name='link'
+                size={20}
+                color='white'
+                style={styles.createCallLinkIcon}
+            />
+            <View style={styles.createCallLinkText}>
+                <Text style={styles.largeText}>Create call link</Text>
+                <Text style={styles.smallText}>Share a link for your WhatsApp call</Text>
+            </View>
         </View>
     )
 }
