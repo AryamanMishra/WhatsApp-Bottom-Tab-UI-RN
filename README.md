@@ -1,0 +1,1 @@
+A different concept whatsapp UI having bottom tabs as navigators instead of top navigators.
