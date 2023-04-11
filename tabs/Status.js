@@ -38,10 +38,10 @@ const styles = StyleSheet.create({
         marginLeft:18
     },
     recentUpdatesSection : {
-        marginVertical:13,
+        marginVertical:14,
     },
     recentUpdates : {
-        marginTop:12,
+        marginTop:14,
         gap:8
     },
     

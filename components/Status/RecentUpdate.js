@@ -28,6 +28,7 @@ const RecentUpdate = ()=> {
 const styles = StyleSheet.create({
     recentUpdate : {
         flexDirection:'row',
+        alignItems:'center',
         gap:12 ,
         paddingVertical:11,
         paddingHorizontal:18
