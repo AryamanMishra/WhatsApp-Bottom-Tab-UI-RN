@@ -63,7 +63,7 @@ const Status = ()=> {
 const styles = StyleSheet.create({
     mainStatus : {
         flex:1,
-        gap:2
+        gap:1
     },
     addStatusSection : {
         flexDirection:'row',
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     },
     recentUpdates : {
         marginTop:20,
-        gap:20
+        gap:22
     },
     recentUpdate : {
         flexDirection:'row',
