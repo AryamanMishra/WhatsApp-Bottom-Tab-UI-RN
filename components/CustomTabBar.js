@@ -29,7 +29,7 @@ const CustomTabBar = ({ state, descriptors, navigation })=> {
                     return (
                         <Pressable 
                             key={index}
-                            android_ripple={{color:'rgba(20,150,20,0.25)',borderless:false}}
+                            android_ripple={{color:'rgba(50,100,50,0.2)',borderless:false}}
                             testID={options.tabBarTestID}
                             style={isFocused ? styles.customTabOn : styles.customTab}
                             onPress={onPress}

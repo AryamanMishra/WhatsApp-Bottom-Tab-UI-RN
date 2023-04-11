@@ -25,26 +25,61 @@ const Status = ()=> {
                     <Text style={styles.smallText}>Tap to add status update</Text>
                 </View>
             </View>
+
+            <View style={styles.recentUpdatesSection}>
+                <Text style={styles.subheadingText}>Recent updates</Text>
+                <View style={styles.recentUpdates}>
+                    <View style={styles.recentUpdate}>
+                        <View style={styles.yourImage}>
+                            <Image 
+                                style={styles.profileImage}
+                                source={testImage}
+                            />
+                        </View>
+                        <View style={styles.recentUpdateText}>
+                            <Text style={styles.largeText}>Aryaman</Text>
+                            <Text style={styles.smallText}>Today, 15:34</Text>
+                        </View>
+                    </View>
+
+                    <View style={styles.recentUpdate}>
+                        <View style={styles.yourImage}>
+                            <Image 
+                                style={styles.profileImage}
+                                source={testImage}
+                            />
+                        </View>
+                        <View style={styles.recentUpdateText}>
+                            <Text style={styles.largeText}>Aryaman</Text>
+                            <Text style={styles.smallText}>Today, 15:34</Text>
+                        </View>
+                    </View>
+                </View>
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     mainStatus : {
-        flex:1
+        flex:1,
+        gap:2
     },
     addStatusSection : {
         flexDirection:'row',
-        marginHorizontal:16,
-        marginVertical:16,
+        marginHorizontal:17,
+        marginVertical:17,
         gap:12    
+    },
+    addStatusText : {
+        marginTop:2.5
     },
     profileImage : {
         width:50,
         height:50,
         borderRadius:50,
         borderWidth:0.5,
-        borderColor:'grey'
+        borderColor:'grey',
     },
     addIcon : {
         position:'absolute',
@@ -54,11 +89,32 @@ const styles = StyleSheet.create({
         borderRadius:50,
     },
     largeText: {
-        fontSize:17.5
+        fontSize:16.5,
+        letterSpacing:0.2
     }, 
     smallText : {
-        color:'grey',
-        fontSize:12.5
+        color:'rgba(10,10,10,0.65)',
+        fontSize:12.5,
+    },
+    subheadingText : {
+        color:'rgba(10,10,10,0.65)',
+        fontSize:13.5,
+        marginLeft:3
+    },
+    recentUpdatesSection : {
+        marginHorizontal:17,
+        marginVertical:17,
+    },
+    recentUpdates : {
+        marginTop:20,
+        gap:20
+    },
+    recentUpdate : {
+        flexDirection:'row',
+        gap:12 
+    },
+    recentUpdateText : {
+        marginTop:2.5,
     }
 })
 

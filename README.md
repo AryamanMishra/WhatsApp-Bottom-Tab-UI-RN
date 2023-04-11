@@ -1,1 +1,1 @@
-A Whatsapp UI app with a different view, having bottom tabs as navigators instead of top navigators, made using React Native
+A Whatsapp like UI only app with a different view, having bottom tabs as navigators instead of top navigators, made using React Native
