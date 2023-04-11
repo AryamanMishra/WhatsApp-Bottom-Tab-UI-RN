@@ -1,6 +1,6 @@
 import React from 'react'
 import { View,StyleSheet,ScrollView } from 'react-native'
-import Chat from '../components/Chat'
+import Chat from '../components/Chats/Chat'
 import NewMessageIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 
