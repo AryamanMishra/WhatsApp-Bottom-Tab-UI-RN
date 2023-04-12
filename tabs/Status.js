@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     },
     encryptedMsg : {
         justifyContent:'center',
-        marginTop:3,
+        marginTop:2.5,
         marginBottom:25,
         alignItems:'center'
     },
