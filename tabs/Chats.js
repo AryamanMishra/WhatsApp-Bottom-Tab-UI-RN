@@ -22,27 +22,32 @@ const Chats = ()=> {
                 <Chat />
                 <Chat />
             </ScrollView>
-            <NewMessageIcon 
-                name='message-text-outline'
-                size={25}
-                color='white'
-                style={styles.newMsgIcon}
-            />
+            <View style={styles.iconsView}>
+                <NewMessageIcon 
+                    name='message-text-outline'
+                    size={24.5}
+                    color='white'
+                    style={styles.newMsgIcon}
+                />
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     mainChats : {
-        backgroundColor:'rgba(200,200,200,0.1)'
+        // backgroundColor:'rgba(200,200,200,0.1)'
+    },
+    iconsView : {
+        position:'absolute',
+        top:'88.8%',
+        right:'4%',
+        alignItems:'center'
     },
     newMsgIcon : {
         backgroundColor:'rgb(40,160,90)',
-        position:'absolute',
-        top:'89%',
-        right:'5%', 
-        paddingVertical:17,
-        paddingHorizontal:17,
+        paddingVertical:18.75,
+        paddingHorizontal:18.75,
         borderRadius:50
     }
 })

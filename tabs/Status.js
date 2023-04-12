@@ -37,7 +37,7 @@ const Status = ()=> {
                     style={styles.cameraIcon}
                     name='camera'
                     color='#ffe'
-                    size={20}
+                    size={19.5}
                 /> 
             </View>
         </View>
@@ -65,14 +65,14 @@ const styles = StyleSheet.create({
     iconsView : {
         position:'absolute',
         top:'80%',
-        right:'5%',
+        right:'4%',
         gap:16,
         alignItems:'center'
     },
     cameraIcon : {
         backgroundColor:'rgb(40,160,90)',  
-        paddingVertical:21,
-        paddingHorizontal:21,
+        paddingVertical:20.5,
+        paddingHorizontal:20.5,
         borderRadius:50
     },
     editIcon : {
