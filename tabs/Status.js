@@ -4,6 +4,7 @@ import RecentUpdate from '../components/Status/RecentUpdate'
 import AddStatus from '../components/Status/AddStatus'
 import CameraIcon from 'react-native-vector-icons/FontAwesome'
 import EditIcon from 'react-native-vector-icons/MaterialIcons'
+import LockIcon from 'react-native-vector-icons/FontAwesome'
 
 
 const Status = ()=> {
@@ -17,6 +18,11 @@ const Status = ()=> {
                         <RecentUpdate />
                         <RecentUpdate />
                         <RecentUpdate />
+                    </View>
+                </View>  
+                <View style={styles.viewedUpdatesSection}>
+                <Text style={styles.subheadingText}>Viewed updates</Text>
+                    <View style={styles.viewedUpdates}>
                         <RecentUpdate />
                         <RecentUpdate />
                         <RecentUpdate />
@@ -24,7 +30,20 @@ const Status = ()=> {
                         <RecentUpdate />
                         <RecentUpdate />
                     </View>
-                </View>   
+                </View> 
+                <View style={styles.encryptedMsg}>
+                    <LockIcon 
+                        name='lock'
+                        size={14}
+                        color='rgba(10,10,10,0.65)'
+                    />
+                    <Text style={styles.encryptedMsgText}>
+                        Your status updates are
+                        </Text>
+                    <Text style={[styles.encryptedMsgText,{ color:'rgb(40,160,90)'}]}>
+                        end-to-end encrypted
+                    </Text>       
+                </View>
             </ScrollView>
             <View style={styles.iconsView}>
                 <EditIcon 
@@ -48,7 +67,6 @@ const Status = ()=> {
 const styles = StyleSheet.create({
     mainStatus : {
         flex:1,
-        gap:1
     },
     subheadingText : {
         color:'rgba(10,10,10,0.65)',
@@ -56,11 +74,21 @@ const styles = StyleSheet.create({
         marginLeft:18
     },
     recentUpdatesSection : {
-        marginVertical:14,
+        marginVertical:12,
     },
     recentUpdates : {
-        marginTop:14,
-        gap:8
+        marginTop:10,
+        gap:6
+    },
+    viewedUpdatesSection : {
+        marginVertical:12,
+        borderBottomColor:"rgba(100,100,100,0.6)",
+        borderBottomWidth:0.2,
+        paddingBottom:15
+    },
+    viewedUpdates : {
+        marginTop:10,
+        gap:6
     },
     iconsView : {
         position:'absolute',
@@ -80,6 +108,16 @@ const styles = StyleSheet.create({
         paddingVertical:10,
         paddingHorizontal:10,
         borderRadius:50,
+    },
+    encryptedMsg : {
+        justifyContent:'center',
+        marginTop:3,
+        marginBottom:25,
+        alignItems:'center'
+    },
+    encryptedMsgText: {
+        color:'rgba(10,10,10,0.65)',
+        fontSize:11.5
     }
 })
 

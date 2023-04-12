@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         gap:12 ,
-        paddingVertical:11,
+        paddingVertical:10,
         paddingHorizontal:18
     },
     recentUpdateText : {
