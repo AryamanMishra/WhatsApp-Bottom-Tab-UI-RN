@@ -1,0 +1,2 @@
+add arrow to view and hide status
+add inside chat screen
