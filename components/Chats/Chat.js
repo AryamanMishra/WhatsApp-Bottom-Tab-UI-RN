@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, StyleSheet, Pressable, Text,Image } from 'react-native'
-import testImage from '../assets/testImage.png'
+import testImage from '../../assets/testImage.png'
+
 
 const Chat = ()=> {
     return (

@@ -2,27 +2,45 @@ import React from 'react'
 import { View,StyleSheet,Text, ScrollView } from 'react-native'
 import RecentUpdate from '../components/Status/RecentUpdate'
 import AddStatus from '../components/Status/AddStatus'
+import CameraIcon from 'react-native-vector-icons/FontAwesome'
+import EditIcon from 'react-native-vector-icons/MaterialIcons'
 
 
 const Status = ()=> {
     return (
-        <ScrollView style={styles.mainStatus}>
-            <AddStatus />
-            <View style={styles.recentUpdatesSection}>
-                <Text style={styles.subheadingText}>Recent updates</Text>
-                <View style={styles.recentUpdates}>
-                    <RecentUpdate />
-                    <RecentUpdate />
-                    <RecentUpdate />
-                    <RecentUpdate />
-                    <RecentUpdate />
-                    <RecentUpdate />
-                    <RecentUpdate />
-                    <RecentUpdate />
-                    <RecentUpdate />
-                </View>
+        <View style={styles.mainStatus}>
+            <ScrollView>
+                <AddStatus />
+                <View style={styles.recentUpdatesSection}>
+                    <Text style={styles.subheadingText}>Recent updates</Text>
+                    <View style={styles.recentUpdates}>
+                        <RecentUpdate />
+                        <RecentUpdate />
+                        <RecentUpdate />
+                        <RecentUpdate />
+                        <RecentUpdate />
+                        <RecentUpdate />
+                        <RecentUpdate />
+                        <RecentUpdate />
+                        <RecentUpdate />
+                    </View>
+                </View>   
+            </ScrollView>
+            <View style={styles.iconsView}>
+                <EditIcon 
+                    style={styles.editIcon}
+                    name='edit'
+                    color='#ffe'
+                    size={24}
+                />
+                <CameraIcon 
+                    style={styles.cameraIcon}
+                    name='camera'
+                    color='#ffe'
+                    size={20}
+                /> 
             </View>
-        </ScrollView>
+        </View>
     )
 }
 
@@ -44,7 +62,25 @@ const styles = StyleSheet.create({
         marginTop:14,
         gap:8
     },
-    
+    iconsView : {
+        position:'absolute',
+        top:'80%',
+        right:'5%',
+        gap:16,
+        alignItems:'center'
+    },
+    cameraIcon : {
+        backgroundColor:'rgb(40,160,90)',  
+        paddingVertical:21,
+        paddingHorizontal:21,
+        borderRadius:50
+    },
+    editIcon : {
+        backgroundColor:'rgba(20,40,50,0.8)',
+        paddingVertical:10,
+        paddingHorizontal:10,
+        borderRadius:50,
+    }
 })
 
 export default Status

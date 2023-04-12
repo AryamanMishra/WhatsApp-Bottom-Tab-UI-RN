@@ -4,7 +4,8 @@ import ChatIcon from 'react-native-vector-icons/Ionicons'
 import StatusIcon from 'react-native-vector-icons/Zocial'
 import CallsIcon from 'react-native-vector-icons/Ionicons'
 
-////
+
+
 const CustomTabBar = ({ state, descriptors, navigation })=> {
     return (
         <View style={styles.customTabBarView}>

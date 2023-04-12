@@ -24,7 +24,7 @@ const Chats = ()=> {
             </ScrollView>
             <NewMessageIcon 
                 name='message-text-outline'
-                size={30}
+                size={25}
                 color='white'
                 style={styles.newMsgIcon}
             />
@@ -39,10 +39,10 @@ const styles = StyleSheet.create({
     newMsgIcon : {
         backgroundColor:'rgb(40,160,90)',
         position:'absolute',
-        top:'88%',
-        right:'6%',
-        paddingVertical:14,
-        paddingHorizontal:14,
+        top:'89%',
+        right:'5%', 
+        paddingVertical:17,
+        paddingHorizontal:17,
         borderRadius:50
     }
 })
