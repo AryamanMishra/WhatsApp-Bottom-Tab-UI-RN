@@ -1,17 +1,16 @@
 import React from 'react'
-import { View,StyleSheet,Text, ScrollView, Pressable } from 'react-native'
+import { View,StyleSheet,Text, ScrollView } from 'react-native'
 import RecentUpdate from '../components/Status/RecentUpdate'
 import AddStatus from '../components/Status/AddStatus'
 import CameraIcon from 'react-native-vector-icons/FontAwesome'
 import EditIcon from 'react-native-vector-icons/MaterialIcons'
 import LockIcon from 'react-native-vector-icons/FontAwesome'
-import ArrowIcon from 'react-native-vector-icons/MaterialIcons'
-import { useGlobalContext } from '../context'
+import MutedUpdatesSection from '../components/Status/MutedUpdatesSection'
+
 
 
 const Status = ()=> {
-
-    const {showData,setShowData} = useGlobalContext()
+    
     return (
         <View style={styles.mainStatus}>
             <ScrollView>
@@ -28,57 +27,13 @@ const Status = ()=> {
                 <View style={styles.viewedUpdatesSection}>
                     <Text style={styles.subheadingText}>Viewed updates</Text>
                     <View style={styles.viewedUpdates}>
-                        <RecentUpdate />
-                        
+                        <RecentUpdate />                    
                         <RecentUpdate />
                         <RecentUpdate />
                     </View>
                 </View> 
 
-                <View style={styles.mutedUpdatesSection}>
-                {
-                    showData ? (
-                        <Pressable
-                            onPress={()=>setShowData(!showData)}
-                            style={styles.mutedUpdatesHeading}
-                        >
-                            <Text style={styles.subheadingText}>Muted updates</Text>
-                            <ArrowIcon 
-                                name='keyboard-arrow-up'
-                                size={24}
-                                color='green' 
-                                style={{paddingRight:25}} 
-                            />
-                        </Pressable>
-                    )
-                    : (
-                        <Pressable
-                            onPress={()=>setShowData(!showData)}
-                            style={styles.mutedUpdatesHeading}
-                        >
-                            <Text style={styles.subheadingText}>Muted updates</Text>
-                            <ArrowIcon 
-                                name='keyboard-arrow-down'
-                                size={24}
-                                color='green'  
-                                style={{paddingRight:25}} 
-                            />
-                        </Pressable>
-                    )
-                }
-                
-
-                    {
-                        showData && (
-                            <View style={styles.recentUpdates}>
-                                <RecentUpdate />
-                                <RecentUpdate />
-                        </View>
-                        )
-                    }
-                   
-                </View> 
-
+                <MutedUpdatesSection />
 
                 <View style={styles.encryptedMsg}>
                     <LockIcon 
@@ -137,7 +92,7 @@ const styles = StyleSheet.create({
         paddingBottom:4
     },
     viewedUpdatesSection : {
-        marginVertical:12,  
+        marginVertical:8,  
     },
     viewedUpdates : {
         marginTop:10,
@@ -161,17 +116,6 @@ const styles = StyleSheet.create({
         paddingVertical:10,
         paddingHorizontal:10,
         borderRadius:50,
-    },
-    mutedUpdatesSection : {
-        marginVertical:12,
-        borderBottomColor:"rgba(100,100,100,0.3)",
-        borderBottomWidth:0.2,
-        paddingBottom:15
-    },
-    mutedUpdatesHeading : {
-        flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:'center',
     },
     encryptedMsg : {
         justifyContent:'center',
