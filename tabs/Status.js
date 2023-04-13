@@ -22,8 +22,6 @@ const Status = ()=> {
                     </View>
                     <View style={styles.recentUpdates}>
                         <RecentUpdate />
-                        <RecentUpdate />
-                        <RecentUpdate />
                     </View>
                 </View>  
 
@@ -31,45 +29,45 @@ const Status = ()=> {
                     <Text style={styles.subheadingText}>Viewed updates</Text>
                     <View style={styles.viewedUpdates}>
                         <RecentUpdate />
-                        <RecentUpdate />
-                        <RecentUpdate />
-                        <RecentUpdate />
+                        
                         <RecentUpdate />
                         <RecentUpdate />
                     </View>
                 </View> 
 
                 <View style={styles.mutedUpdatesSection}>
-                    <View style={styles.mutedUpdatesHeading}>
-                        <Text style={styles.subheadingText}>Muted updates</Text>
-                        {
-                            showData ? (
-                                <Pressable
-                                    style={{paddingRight:25}}
-                                    onPress={()=>setShowData(!showData)}
-                                >
-                                    <ArrowIcon 
-                                        name='keyboard-arrow-up'
-                                        size={24}
-                                        color='green'  
-                                    />
-                                </Pressable>
-                            )
-                            : (
-                                <Pressable
-                                    onPress={()=>setShowData(!showData)}
-                                >
-                                    <ArrowIcon 
-                                        name='keyboard-arrow-down'
-                                        size={24}
-                                        color='green'  
-                                    />
-                                </Pressable>
-                            )
-                        }
-                       
-                        
-                    </View>
+                {
+                    showData ? (
+                        <Pressable
+                            onPress={()=>setShowData(!showData)}
+                            style={styles.mutedUpdatesHeading}
+                        >
+                            <Text style={styles.subheadingText}>Muted updates</Text>
+                            <ArrowIcon 
+                                name='keyboard-arrow-up'
+                                size={24}
+                                color='green' 
+                                style={{paddingRight:25}} 
+                            />
+                        </Pressable>
+                    )
+                    : (
+                        <Pressable
+                            onPress={()=>setShowData(!showData)}
+                            style={styles.mutedUpdatesHeading}
+                        >
+                            <Text style={styles.subheadingText}>Muted updates</Text>
+                            <ArrowIcon 
+                                name='keyboard-arrow-down'
+                                size={24}
+                                color='green'  
+                                style={{paddingRight:25}} 
+                            />
+                        </Pressable>
+                    )
+                }
+                
+
                     {
                         showData && (
                             <View style={styles.recentUpdates}>
@@ -118,6 +116,7 @@ const Status = ()=> {
 const styles = StyleSheet.create({
     mainStatus : {
         flex:1,
+        height:'auto'
     },
     subheadingText : {
         color:'rgba(10,10,10,0.65)',
@@ -138,8 +137,7 @@ const styles = StyleSheet.create({
         paddingBottom:4
     },
     viewedUpdatesSection : {
-        marginVertical:12,
-        
+        marginVertical:12,  
     },
     viewedUpdates : {
         marginTop:10,
@@ -147,10 +145,10 @@ const styles = StyleSheet.create({
     },
     iconsView : {
         position:'absolute',
-        top:'80%',
-        right:'4%',
+        bottom:10,
+        right:15,
         gap:16,
-        alignItems:'center'
+        alignItems:'center',
     },
     cameraIcon : {
         backgroundColor:'rgb(40,160,90)',  
@@ -171,10 +169,8 @@ const styles = StyleSheet.create({
         paddingBottom:15
     },
     mutedUpdatesHeading : {
-        // borderBottomColor:"rgba(100,100,100,0.3)",
-        // borderBottomWidth:0.2,
         flexDirection:'row',
-        gap:30,
+        justifyContent:'space-between',
         alignItems:'center',
     },
     encryptedMsg : {
