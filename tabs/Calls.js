@@ -3,7 +3,7 @@ import { Text, View,StyleSheet, ScrollView } from 'react-native'
 import CreateCallLink from '../components/Calls/CreateCallLink'
 import RecentCall from '../components/Calls/RecentCall'
 import AddCallIcon from 'react-native-vector-icons/MaterialIcons'
-import LockIcon from 'react-native-vector-icons/FontAwesome'
+import EncryptedMsg from '../components/EncryptedMsg'
 
 
 const Calls = ()=> {
@@ -25,19 +25,9 @@ const Calls = ()=> {
                             <RecentCall />      
                     </View>
                 </View>
-                <View style={styles.encryptedMsg}>
-                    <LockIcon 
-                        name='lock'
-                        size={14}
-                        color='rgba(10,10,10,0.65)'
-                    />
-                    <Text style={styles.encryptedMsgText}>
-                        Your personal calls are
-                        </Text>
-                    <Text style={[styles.encryptedMsgText,{ color:'rgb(40,160,90)'}]}>
-                        end-to-end encrypted
-                    </Text>       
-                </View>
+
+                <EncryptedMsg tab='Calls'/>
+                
             </ScrollView>
             <View style={styles.iconsView}>
                 <AddCallIcon 
@@ -84,16 +74,6 @@ const styles = StyleSheet.create({
         paddingHorizontal:18.75,
         borderRadius:50
     },
-    encryptedMsg : {
-        justifyContent:'center',
-        marginTop:3,
-        marginBottom:25,
-        alignItems:'center'
-    },
-    encryptedMsgText: {
-        color:'rgba(10,10,10,0.65)',
-        fontSize:11.5
-    }
 })
 
 

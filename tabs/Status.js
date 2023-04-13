@@ -2,10 +2,10 @@ import React from 'react'
 import { View,StyleSheet,Text, ScrollView } from 'react-native'
 import RecentUpdate from '../components/Status/RecentUpdate'
 import AddStatus from '../components/Status/AddStatus'
-import CameraIcon from 'react-native-vector-icons/FontAwesome'
-import EditIcon from 'react-native-vector-icons/MaterialIcons'
-import LockIcon from 'react-native-vector-icons/FontAwesome'
+
 import MutedUpdatesSection from '../components/Status/MutedUpdatesSection'
+import UtilityIcons from '../components/Status/UtilityIcons'
+import EncryptedMsg from '../components/EncryptedMsg'
 
 
 
@@ -35,34 +35,12 @@ const Status = ()=> {
 
                 <MutedUpdatesSection />
 
-                <View style={styles.encryptedMsg}>
-                    <LockIcon 
-                        name='lock'
-                        size={14}
-                        color='rgba(10,10,10,0.65)'
-                    />
-                    <Text style={styles.encryptedMsgText}>
-                        Your status updates are
-                        </Text>
-                    <Text style={[styles.encryptedMsgText,{ color:'rgb(40,160,90)'}]}>
-                        end-to-end encrypted
-                    </Text>       
-                </View>
+                <EncryptedMsg tab='Status'/>
+                                
             </ScrollView>
-            <View style={styles.iconsView}>
-                <EditIcon 
-                    style={styles.editIcon}
-                    name='edit'
-                    color='#ffe'
-                    size={24}
-                />
-                <CameraIcon 
-                    style={styles.cameraIcon}
-                    name='camera'
-                    color='#ffe'
-                    size={19.5}
-                /> 
-            </View>
+
+            <UtilityIcons />
+
         </View>
     )
 }
@@ -98,35 +76,6 @@ const styles = StyleSheet.create({
         marginTop:10,
         gap:6
     },
-    iconsView : {
-        position:'absolute',
-        bottom:10,
-        right:15,
-        gap:16,
-        alignItems:'center',
-    },
-    cameraIcon : {
-        backgroundColor:'rgb(40,160,90)',  
-        paddingVertical:20.5,
-        paddingHorizontal:20.5,
-        borderRadius:50
-    },
-    editIcon : {
-        backgroundColor:'rgba(20,40,50,0.8)',
-        paddingVertical:10,
-        paddingHorizontal:10,
-        borderRadius:50,
-    },
-    encryptedMsg : {
-        justifyContent:'center',
-        marginTop:2.5,
-        marginBottom:25,
-        alignItems:'center'
-    },
-    encryptedMsgText: {
-        color:'rgba(10,10,10,0.65)',
-        fontSize:11.5
-    }
 })
 
 export default Status

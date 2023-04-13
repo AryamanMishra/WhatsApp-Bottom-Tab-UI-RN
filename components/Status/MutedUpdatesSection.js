@@ -57,7 +57,7 @@ const MutedUpdatesSection = ()=> {
 
 const styles = StyleSheet.create({
     mutedUpdatesSection : {
-        marginVertical:8,
+        marginTop:8,
         borderBottomColor:"rgba(100,100,100,0.3)",
         borderBottomWidth:0.2,
         paddingBottom:5
