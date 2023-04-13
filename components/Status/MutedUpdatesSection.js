@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         marginVertical:8,
         borderBottomColor:"rgba(100,100,100,0.3)",
         borderBottomWidth:0.2,
-        paddingBottom:15
+        paddingBottom:5
     },
     subheadingText : {
         color:'rgba(10,10,10,0.65)',
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
+        marginBottom:8
     },
 })
 export default MutedUpdatesSection
