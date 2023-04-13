@@ -1,27 +1,34 @@
 import React from 'react'
-import { View,StyleSheet,Text, ScrollView } from 'react-native'
+import { View,StyleSheet,Text, ScrollView, Pressable } from 'react-native'
 import RecentUpdate from '../components/Status/RecentUpdate'
 import AddStatus from '../components/Status/AddStatus'
 import CameraIcon from 'react-native-vector-icons/FontAwesome'
 import EditIcon from 'react-native-vector-icons/MaterialIcons'
 import LockIcon from 'react-native-vector-icons/FontAwesome'
+import ArrowIcon from 'react-native-vector-icons/MaterialIcons'
+import { useGlobalContext } from '../context'
 
 
 const Status = ()=> {
+
+    const {showData,setShowData} = useGlobalContext()
     return (
         <View style={styles.mainStatus}>
             <ScrollView>
                 <AddStatus />
                 <View style={styles.recentUpdatesSection}>
-                    <Text style={styles.subheadingText}>Recent updates</Text>
+                    <View style={styles.recentUpdatesHeading}>
+                        <Text style={styles.subheadingText}>Recent updates</Text>
+                    </View>
                     <View style={styles.recentUpdates}>
                         <RecentUpdate />
                         <RecentUpdate />
                         <RecentUpdate />
                     </View>
                 </View>  
+
                 <View style={styles.viewedUpdatesSection}>
-                <Text style={styles.subheadingText}>Viewed updates</Text>
+                    <Text style={styles.subheadingText}>Viewed updates</Text>
                     <View style={styles.viewedUpdates}>
                         <RecentUpdate />
                         <RecentUpdate />
@@ -31,6 +38,50 @@ const Status = ()=> {
                         <RecentUpdate />
                     </View>
                 </View> 
+
+                <View style={styles.mutedUpdatesSection}>
+                    <View style={styles.mutedUpdatesHeading}>
+                        <Text style={styles.subheadingText}>Muted updates</Text>
+                        {
+                            showData ? (
+                                <Pressable
+                                    style={{paddingRight:25}}
+                                    onPress={()=>setShowData(!showData)}
+                                >
+                                    <ArrowIcon 
+                                        name='keyboard-arrow-up'
+                                        size={24}
+                                        color='green'  
+                                    />
+                                </Pressable>
+                            )
+                            : (
+                                <Pressable
+                                    onPress={()=>setShowData(!showData)}
+                                >
+                                    <ArrowIcon 
+                                        name='keyboard-arrow-down'
+                                        size={24}
+                                        color='green'  
+                                    />
+                                </Pressable>
+                            )
+                        }
+                       
+                        
+                    </View>
+                    {
+                        showData && (
+                            <View style={styles.recentUpdates}>
+                                <RecentUpdate />
+                                <RecentUpdate />
+                        </View>
+                        )
+                    }
+                   
+                </View> 
+
+
                 <View style={styles.encryptedMsg}>
                     <LockIcon 
                         name='lock'
@@ -77,14 +128,18 @@ const styles = StyleSheet.create({
         marginVertical:12,
     },
     recentUpdates : {
-        marginTop:10,
+        marginTop:5,
         gap:6
+    },
+    recentUpdatesHeading : {
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        paddingBottom:4
     },
     viewedUpdatesSection : {
         marginVertical:12,
-        borderBottomColor:"rgba(100,100,100,0.6)",
-        borderBottomWidth:0.2,
-        paddingBottom:15
+        
     },
     viewedUpdates : {
         marginTop:10,
@@ -108,6 +163,19 @@ const styles = StyleSheet.create({
         paddingVertical:10,
         paddingHorizontal:10,
         borderRadius:50,
+    },
+    mutedUpdatesSection : {
+        marginVertical:12,
+        borderBottomColor:"rgba(100,100,100,0.3)",
+        borderBottomWidth:0.2,
+        paddingBottom:15
+    },
+    mutedUpdatesHeading : {
+        // borderBottomColor:"rgba(100,100,100,0.3)",
+        // borderBottomWidth:0.2,
+        flexDirection:'row',
+        gap:30,
+        alignItems:'center',
     },
     encryptedMsg : {
         justifyContent:'center',

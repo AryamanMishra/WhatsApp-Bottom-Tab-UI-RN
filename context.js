@@ -8,6 +8,8 @@ export const AppProvider = ({children})=> {
     
     const [tab,setTab] = useState('Chats')
     const [previousTab,setPreviousTab] = useState(null)
+
+    const [showData,setShowData] = useState(false)
     
     return (
 
@@ -16,7 +18,9 @@ export const AppProvider = ({children})=> {
                 tab,
                 setTab,
                 previousTab,
-                setPreviousTab
+                setPreviousTab,
+                showData,
+                setShowData
             }}
         >
             {children}
