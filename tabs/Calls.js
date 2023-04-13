@@ -27,7 +27,7 @@ const Calls = ()=> {
                 </View>
 
                 <EncryptedMsg tab='Calls'/>
-                
+
             </ScrollView>
             <View style={styles.iconsView}>
                 <AddCallIcon 
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
         marginLeft:16
     },
     recentCallsSection : {
-        marginVertical:12,
+        marginTop:12,
         gap:15,
         borderBottomColor:"rgba(100,100,100,0.6)",
         borderBottomWidth:0.2,
