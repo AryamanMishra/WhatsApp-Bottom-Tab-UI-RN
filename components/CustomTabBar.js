@@ -41,13 +41,13 @@ const CustomTabBar = ({ state, descriptors, navigation })=> {
                                         <ChatIcon 
                                             name='md-chatbox'
                                             size={25}
-                                            color='green'
+                                            color='rgb(0,150,0)'
                                         /> 
                                     ): (
                                         <ChatIcon 
                                         name='md-chatbox-outline'
                                         size={25}
-                                        color='green'
+                                        color='rgb(0,150,0)'
                                         /> 
                                     )
                                     
@@ -57,21 +57,21 @@ const CustomTabBar = ({ state, descriptors, navigation })=> {
                                     <StatusIcon
                                         name='google-circles'
                                         size={26}
-                                        color={isFocused ? 'rgb(0,100,0)' :'rgb(0,150,0)'}
+                                        color={isFocused ? 'rgb(0,110,0)' :'rgb(0,150,0)'}
                                     />
                                 ) :(
                                     isFocused ? (
                                         <CallsIcon 
                                             name='call'
                                             size={25}
-                                            color='green'
+                                            color='rgb(0,150,0)'
                                         />
                                     )
                                     : (
                                         <CallsIcon 
                                             name='call-outline'
                                             size={25}
-                                            color='green'
+                                            color='rgb(0,150,0)'
                                         />
                                     )
                                 )

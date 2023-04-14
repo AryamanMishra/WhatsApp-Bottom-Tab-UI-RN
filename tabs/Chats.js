@@ -51,14 +51,14 @@ const styles = StyleSheet.create({
     },
     iconsView : {
         position:'absolute',
-        top:'89%',
+        top:'88.95%',
         right:'4.5%',
         alignItems:'center'
     },
     newMsgIcon : {
         backgroundColor:'rgb(40,160,90)',
-        paddingVertical:18.75,
-        paddingHorizontal:18.75,
+        paddingVertical:18.5,
+        paddingHorizontal:18.5,
         borderRadius:50
     },
 })
