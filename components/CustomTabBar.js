@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, Pressable, View, StyleSheet } from 'react-native'
 import ChatIcon from 'react-native-vector-icons/Ionicons'
-import StatusIcon from 'react-native-vector-icons/Zocial'
+import StatusIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import CallsIcon from 'react-native-vector-icons/Ionicons'
 
 
@@ -55,8 +55,8 @@ const CustomTabBar = ({ state, descriptors, navigation })=> {
                                 : 
                                 label === 'Status' ?(
                                     <StatusIcon
-                                        name='statusnet'
-                                        size={25}
+                                        name='google-circles'
+                                        size={26}
                                         color={isFocused ? 'rgb(0,100,0)' :'rgb(0,150,0)'}
                                     />
                                 ) :(
@@ -76,7 +76,10 @@ const CustomTabBar = ({ state, descriptors, navigation })=> {
                                     )
                                 )
                             }
-                            <Text style={styles.text}>{label}</Text>
+                            {
+                                isFocused && <Text style={styles.text}>{label}</Text>
+                            }
+                            
                         </Pressable>
                     )
                 })
@@ -94,7 +97,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
         paddingVertical:10,
-        gap:2
+        gap:3
     },
     customTabOn : {
         flex:1,

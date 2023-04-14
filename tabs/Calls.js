@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
     }, 
     iconsView : {
         position:'absolute',
-        top:'88.8%',
-        right:'4%',
+        top:'89%',
+        right:'4.5%',
         gap:16,
         alignItems:'center'
     },

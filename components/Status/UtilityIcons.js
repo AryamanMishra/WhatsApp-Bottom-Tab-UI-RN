@@ -27,8 +27,8 @@ const UtilityIcons = ()=> {
 const styles = StyleSheet.create({
     iconsView : {
         position:'absolute',
-        bottom:10,
-        right:15,
+        top:'80.2%',
+        right:'4.4%',
         gap:16,
         alignItems:'center',
     },
