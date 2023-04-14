@@ -11,6 +11,8 @@ export const AppProvider = ({children})=> {
 
     const [showData,setShowData] = useState(false)
     
+
+    const [focusedTab,setFocusedTab] = useState('Chats')
     return (
 
         <AppContext.Provider
@@ -20,7 +22,9 @@ export const AppProvider = ({children})=> {
                 previousTab,
                 setPreviousTab,
                 showData,
-                setShowData
+                setShowData,
+                focusedTab,
+                setFocusedTab
             }}
         >
             {children}

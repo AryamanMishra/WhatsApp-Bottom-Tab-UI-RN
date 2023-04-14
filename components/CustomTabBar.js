@@ -3,10 +3,26 @@ import { Text, Pressable, View, StyleSheet } from 'react-native'
 import ChatIcon from 'react-native-vector-icons/Ionicons'
 import StatusIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import CallsIcon from 'react-native-vector-icons/Ionicons'
-
+import {useGlobalContext} from '../context'
 
 
 const CustomTabBar = ({ state, descriptors, navigation })=> {
+
+    const {setFocusedTab} = useGlobalContext()
+
+    const onPress = (route,isFocused) => {
+        const event = navigation.emit({
+            type: 'tabPress',
+            target: route.key,
+            canPreventDefault: true,
+        });
+        setFocusedTab(route.name)
+        if (!isFocused && !event.defaultPrevented) {
+            navigation.navigate({ name: route.name, merge: true });
+        }
+    };
+
+
     return (
         <View style={styles.customTabBarView}>
             {
@@ -15,25 +31,13 @@ const CustomTabBar = ({ state, descriptors, navigation })=> {
                     const label = route.name
                     const isFocused = state.index === index
 
-                    const onPress = () => {
-                        const event = navigation.emit({
-                            type: 'tabPress',
-                            target: route.key,
-                            canPreventDefault: true,
-                        });
-
-                        if (!isFocused && !event.defaultPrevented) {
-                            navigation.navigate({ name: route.name, merge: true });
-                        }
-                    };
-                    
                     return (
                         <Pressable 
                             key={index}
                             android_ripple={{color:'rgba(50,100,50,0.2)',borderless:false}}
                             testID={options.tabBarTestID}
                             style={isFocused ? styles.customTabOn : styles.customTab}
-                            onPress={onPress}
+                            onPress={()=>onPress(route,isFocused)}
                         >   
                             {
                                 label === 'Chats' ? (
