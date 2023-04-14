@@ -14,8 +14,8 @@ const UtilityIcons = ()=> {
 
     const moveUpAnim = ()=> {
         Animated.timing(moveUpValue, {
-            toValue:-15,
-            duration:400,
+            toValue:-10,
+            duration:250,
             useNativeDriver:true
         }).start()
     }
@@ -24,7 +24,7 @@ const UtilityIcons = ()=> {
     const moveDownAnim = ()=> {
         Animated.timing(moveUpValue, {
             toValue:30,
-            duration:400,
+            duration:250,
             useNativeDriver:true
         }).start()
     }
