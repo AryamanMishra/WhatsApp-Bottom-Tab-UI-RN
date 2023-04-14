@@ -1,2 +1,2 @@
 add inside chat screen
-add animations
+add animation in muted updates
