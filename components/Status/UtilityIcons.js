@@ -9,12 +9,11 @@ const UtilityIcons = ()=> {
 
     const {focusedTab} = useGlobalContext()
 
-    const moveUpValue = useRef(new Animated.Value(0)).current
-    const moveDownValue = useRef(new Animated.Value(0)).current
+    const initialMoveValue = useRef(new Animated.Value(0)).current
 
     const moveUpAnim = ()=> {
-        Animated.timing(moveUpValue, {
-            toValue:-10,
+        Animated.timing(initialMoveValue, {
+            toValue:-12,
             duration:250,
             useNativeDriver:true
         }).start()
@@ -22,7 +21,7 @@ const UtilityIcons = ()=> {
 
 
     const moveDownAnim = ()=> {
-        Animated.timing(moveUpValue, {
+        Animated.timing(initialMoveValue, {
             toValue:30,
             duration:250,
             useNativeDriver:true
@@ -42,32 +41,16 @@ const UtilityIcons = ()=> {
 
     return (
         <View style={styles.iconsView}>
-            {
-                focusedTab === 'Status' ? (
-                    <Animated.View
-                        style={{transform:[{translateY:moveUpValue}]}}
-                    >
-                        <EditIcon 
-                            style={styles.editIcon}
-                            name='edit'
-                            color='#ffe'
-                            size={24}
-                        />
-                    </Animated.View>
-                )
-                : (
-                    <Animated.View
-                        style={{transform:[{translateY:moveDownValue}]}}
-                    >
-                        <EditIcon 
-                            style={styles.editIcon}
-                            name='edit'
-                            color='#ffe'
-                            size={24}
-                        />
-                    </Animated.View>
-                )
-            }
+            <Animated.View
+                style={{transform:[{translateY:initialMoveValue}]}}
+            >
+                <EditIcon 
+                    style={styles.editIcon}
+                    name='edit'
+                    color='#ffe'
+                    size={24}
+                />
+            </Animated.View>
               
             <CameraIcon 
                 style={styles.cameraIcon}

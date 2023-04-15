@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import ArrowIcon from 'react-native-vector-icons/MaterialIcons'
-import { View,StyleSheet,Text,Pressable } from 'react-native'
+import { View,StyleSheet,Text,Pressable,Animated } from 'react-native'
 import { useGlobalContext } from '../../context'
 import RecentUpdate from './RecentUpdate'
 
 
 const MutedUpdatesSection = ()=> {
+
+    const handlePress = ()=> {
+        setShowData(!showData)
+    }
 
     const {showData,setShowData} = useGlobalContext()
     return (
@@ -13,7 +17,7 @@ const MutedUpdatesSection = ()=> {
             {
                 showData ? (
                     <Pressable
-                        onPress={()=>setShowData(!showData)}
+                        onPress={handlePress}
                         style={styles.mutedUpdatesHeading}
                     >
                         <Text style={styles.subheadingText}>Muted updates</Text>
@@ -40,16 +44,14 @@ const MutedUpdatesSection = ()=> {
                     </Pressable>
                 )
             }
-            
-
-        {
-            showData && (
-                <View style={styles.recentUpdates}>
-                    <RecentUpdate />
-                    <RecentUpdate />
-            </View>
-            )
-        }  
+            {
+                showData && (
+                    <View style={styles.recentUpdates}>
+                        <RecentUpdate />
+                        <RecentUpdate />
+                    </View>
+                )
+            }
         </View> 
     )
 }
@@ -60,7 +62,7 @@ const styles = StyleSheet.create({
         marginTop:8,
         borderBottomColor:"rgba(100,100,100,0.3)",
         borderBottomWidth:0.2,
-        paddingBottom:5
+        paddingBottom:5,
     },
     subheadingText : {
         color:'rgba(10,10,10,0.65)',
