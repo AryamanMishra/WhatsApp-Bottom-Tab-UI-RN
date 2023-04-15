@@ -1,12 +1,23 @@
 import React, { useEffect, useRef } from 'react'
 import ArrowIcon from 'react-native-vector-icons/MaterialIcons'
-import { View,StyleSheet,Text,Pressable,Animated } from 'react-native'
+import { View,StyleSheet,Text,Pressable,Animated,Easing } from 'react-native'
 import { useGlobalContext } from '../../context'
 import RecentUpdate from './RecentUpdate'
 
 
 const MutedUpdatesSection = ()=> {
 
+
+    useEffect(()=> {
+        if (showData === true) {
+            // animOpen()
+        }
+        else {
+            // animClose()
+        }
+    },[showData])
+
+    
     const handlePress = ()=> {
         setShowData(!showData)
     }
@@ -46,10 +57,14 @@ const MutedUpdatesSection = ()=> {
             }
             {
                 showData && (
-                    <View style={styles.recentUpdates}>
-                        <RecentUpdate />
-                        <RecentUpdate />
-                    </View>
+                    <Animated.View
+                        // style={{height:heightValue}}
+                    >
+                        <View>
+                                <RecentUpdate />
+                                <RecentUpdate />
+                        </View>
+                    </Animated.View>
                 )
             }
         </View> 

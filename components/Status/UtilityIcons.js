@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import CameraIcon from 'react-native-vector-icons/FontAwesome'
 import EditIcon from 'react-native-vector-icons/MaterialIcons'
-import { View,StyleSheet,Animated } from 'react-native'
+import { View,StyleSheet,Animated,Easing } from 'react-native'
 import { useGlobalContext } from '../../context'
 
 
@@ -13,9 +13,10 @@ const UtilityIcons = ()=> {
 
     const moveUpAnim = ()=> {
         Animated.timing(initialMoveValue, {
-            toValue:-12,
-            duration:250,
-            useNativeDriver:true
+            toValue:-13,
+            duration:1000,
+            useNativeDriver:true,
+            easing:Easing.bounce
         }).start()
     }
 
