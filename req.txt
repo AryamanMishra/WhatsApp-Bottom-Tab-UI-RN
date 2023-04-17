@@ -1,2 +1,2 @@
 add inside chat screen
-add animation in muted updates
+add proper height to toValue in animation
