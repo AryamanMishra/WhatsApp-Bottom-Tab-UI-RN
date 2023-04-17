@@ -1,28 +1,48 @@
 import React, { useEffect, useRef } from 'react'
 import ArrowIcon from 'react-native-vector-icons/MaterialIcons'
-import { View,StyleSheet,Text,Pressable,Animated,Easing } from 'react-native'
+import { View,StyleSheet,Text,Pressable,Animated } from 'react-native'
 import { useGlobalContext } from '../../context'
 import RecentUpdate from './RecentUpdate'
+import MutedUpdate from './MutedUpdate'
 
 
 const MutedUpdatesSection = ()=> {
 
+    const heightValue = useRef(new Animated.Value(0)).current
 
-    useEffect(()=> {
-        if (showData === true) {
-            // animOpen()
-        }
-        else {
-            // animClose()
-        }
-    },[showData])
+    const {showData,setShowData} = useGlobalContext()
 
+    const increaseHeight = ()=> {
+        Animated.timing(heightValue, {
+            toValue:150,
+            duration:500,
+            useNativeDriver:false
+        }).start()
+    }
+
+    const decreaseHeight = ()=> {
+        Animated.timing(heightValue, {
+            toValue:0,
+            duration:500,
+            useNativeDriver:false
+        }).start()
+    }
     
     const handlePress = ()=> {
         setShowData(!showData)
     }
 
-    const {showData,setShowData} = useGlobalContext()
+
+    useEffect(()=> {
+        if (showData === true) {
+            increaseHeight()
+        }
+        else {
+            decreaseHeight()
+        }
+    },[showData])
+
+
     return (
         <View style={styles.mutedUpdatesSection}>
             {
@@ -42,7 +62,7 @@ const MutedUpdatesSection = ()=> {
                 )
                 : (
                     <Pressable
-                        onPress={()=>setShowData(!showData)}
+                        onPress={handlePress}
                         style={styles.mutedUpdatesHeading}
                     >
                         <Text style={styles.subheadingText}>Muted updates</Text>
@@ -55,18 +75,12 @@ const MutedUpdatesSection = ()=> {
                     </Pressable>
                 )
             }
-            {
-                showData && (
-                    <Animated.View
-                        // style={{height:heightValue}}
-                    >
-                        <View>
-                                <RecentUpdate />
-                                <RecentUpdate />
-                        </View>
-                    </Animated.View>
-                )
-            }
+            <Animated.View
+                style={{height:heightValue, opacity:0.55}}
+            >
+                <MutedUpdate />
+                <MutedUpdate />
+            </Animated.View>
         </View> 
     )
 }
@@ -74,7 +88,7 @@ const MutedUpdatesSection = ()=> {
 
 const styles = StyleSheet.create({
     mutedUpdatesSection : {
-        marginTop:8,
+        marginTop:10,
         borderBottomColor:"rgba(100,100,100,0.3)",
         borderBottomWidth:0.2,
         paddingBottom:5,
