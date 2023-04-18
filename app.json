@@ -20,7 +20,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#008F64"
+        "backgroundColor": "#ffffff"
       },
       "package": "com.aryamanm.notwhatsapp"
     },
