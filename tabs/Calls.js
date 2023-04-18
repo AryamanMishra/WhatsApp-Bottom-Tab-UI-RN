@@ -4,7 +4,7 @@ import CreateCallLink from '../components/Calls/CreateCallLink'
 import RecentCall from '../components/Calls/RecentCall'
 import AddCallIcon from 'react-native-vector-icons/MaterialIcons'
 import EncryptedMsg from '../components/EncryptedMsg'
-
+import { calls } from '../utils/calls'
 
 const Calls = ()=> {
     return (
@@ -14,15 +14,11 @@ const Calls = ()=> {
                 <View style={styles.recentCallsSection}>
                     <Text style={styles.subheadingText}>Recent</Text>
                     <View style={styles.recentCalls}>
-                            <RecentCall />
-                            <RecentCall />
-                            <RecentCall />
-                            <RecentCall />
-                            <RecentCall />
-                            <RecentCall />
-                            <RecentCall />
-                            <RecentCall />
-                            <RecentCall />      
+                        {
+                            calls.map((call)=> {
+                                return <RecentCall key={call.id} call={call}/>
+                            })
+                        }  
                     </View>
                 </View>
 

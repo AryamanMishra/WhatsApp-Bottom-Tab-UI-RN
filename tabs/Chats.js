@@ -3,28 +3,21 @@ import { View,StyleSheet,ScrollView } from 'react-native'
 import Chat from '../components/Chats/Chat'
 import NewMessageIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import EncryptedMsg from '../components/EncryptedMsg'
-import NavOnLongPress from '../components/Chats/NavOnLongPress'
-
+import { chats } from '../utils/chats'
 
 const Chats = ()=> {
 
 
     return (
         <View style={styles.mainChats}>
-            {/* <NavOnLongPress /> */}
             <ScrollView
             >
                 <View style={styles.allChats}>
-                    <Chat />
-                    <Chat />
-                    <Chat />
-                    <Chat />
-                    <Chat />
-                    <Chat />
-                    <Chat />
-                    <Chat />
-                    <Chat />
-                    <Chat />
+                    {
+                        chats.map((chat)=> {
+                            return <Chat key={chat.id} chat={chat}/>
+                        })
+                    }
                 </View>
                 
                 <EncryptedMsg tab='Chats'/>
@@ -49,7 +42,8 @@ const styles = StyleSheet.create({
     allChats : {
         borderBottomColor:"rgba(100,100,100,0.6)",
         borderBottomWidth:0.2,
-        paddingBottom:15  
+        paddingBottom:15 ,
+        marginTop:-3
     },
     iconsView : {
         position:'absolute',

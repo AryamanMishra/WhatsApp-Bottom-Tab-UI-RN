@@ -1,11 +1,11 @@
 import React from 'react'
-import testImage from '../../assets/testImage.png'
 import ArrowDownLeft from 'react-native-vector-icons/Feather'
+import ArrowTopRight from 'react-native-vector-icons/Feather'
 import { Text, View,StyleSheet,Image, Pressable } from 'react-native'
 import CallsIcon from 'react-native-vector-icons/Ionicons'
 
 
-const RecentCall = ()=> {
+const RecentCall = ({ call })=> {
     return (
         <Pressable
             android_ripple={{color:'rgba(100,100,100,0.2)'}}
@@ -15,21 +15,42 @@ const RecentCall = ()=> {
                     <View style={styles.yourImage}>
                         <Image 
                             style={styles.profileImage}
-                            source={testImage}
+                            source={call.image}
                         />
                     </View>
                     <View style={styles.recentCallText}>
-                        <Text style={styles.largeText}>Aryaman</Text>
+                        <Text style={styles.largeText}>{call.name}</Text>
                         <View style={{flexDirection:'row',alignItems:'center',gap:4}}>
-                            <ArrowDownLeft 
-                                name='arrow-down-left'
-                                size={16}
-                                color='red'
-                            />
-                            <Text style={styles.smallText}>Today, 15:34</Text>
+                            {
+                                call.type === 'incoming' ? (
+                                    call.missed ? (
+                                        <ArrowDownLeft 
+                                            name='arrow-down-left'
+                                            size={16}
+                                            color='red'
+                                        />
+                                    )
+                                    : (
+                                        <ArrowDownLeft 
+                                            name='arrow-down-left'
+                                            size={16}
+                                            color='green'
+                                        />
+                                    )
+                                )
+                                : (
+                                    <ArrowTopRight
+                                        name='arrow-up-right'
+                                        size={16}
+                                        color='green'
+                                    />
+                                )
+                            } 
+                            <Text style={styles.smallText}>{call.dateTime}</Text>
                         </View>  
                     </View>
                 </View>
+                
                 <CallsIcon 
                     name='call'
                     size={23}
@@ -65,7 +86,8 @@ const styles = StyleSheet.create({
     },
     largeText: {
         fontSize:16.5,
-        letterSpacing:0.2
+        letterSpacing:0.2,
+        textTransform:"capitalize"
     }, 
     smallText : {
         color:'rgba(10,10,10,0.65)',

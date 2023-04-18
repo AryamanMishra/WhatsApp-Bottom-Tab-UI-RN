@@ -1,29 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, StyleSheet, Pressable, Text,Image } from 'react-native'
-import testImage from '../../assets/testImage.png'
-import { Alert } from 'react-native'
 import { useGlobalContext } from '../../contexts/context'
 
-const Chat = ()=> {
+const Chat = ({chat})=> {
 
-    const { longPressChat,setLongPressChat } = useGlobalContext()
+    
+    const { longPressChat,setLongPressChat,selectedChatId,setSelectedChatId } = useGlobalContext()
+
 
     const handleLongPress = ()=> {
         setLongPressChat(true)
+        setSelectedChatId(chat.id)
     }
 
     return (
         <Pressable 
-            style={styles.singleChat}
+            style={longPressChat === true && selectedChatId === chat.id ? styles.selectedSingleChat: styles.singleChat}
             android_ripple={{color:'rgba(100,100,100,0.2)'}}
             onLongPress={handleLongPress}
         >
             <Image 
                 style={styles.profileImage}
-                source={testImage}
+                source={chat.image}
             />
             <View style={styles.chatOverlay}>
-                <Text style={styles.profileName}>Aryaman</Text>
+                <Text style={styles.profileName}>{chat.name}</Text>
                 <Text style={styles.recentMsg}>Hi</Text>
             </View>
             <View style={styles.recentMsgTimeView}>
@@ -45,6 +46,16 @@ const styles = StyleSheet.create({
         paddingHorizontal:14,
         paddingVertical:10
     },
+    selectedSingleChat : {
+        backgroundColor:"rgba(10,100,150,0.3)",
+        flex:1,
+        flexDirection:'row',
+        alignItems:'center',
+        marginTop:10,
+        gap:20,
+        paddingHorizontal:14,
+        paddingVertical:10
+    },
     chatOverlay : {
         flexDirection:'column'
     },
@@ -56,6 +67,7 @@ const styles = StyleSheet.create({
         borderColor:'grey'
     },
     profileName : {
+        textTransform:"capitalize",
         fontSize:15
     },
     recentMsg : {

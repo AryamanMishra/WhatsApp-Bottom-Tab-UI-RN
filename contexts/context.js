@@ -12,6 +12,8 @@ export const AppProvider = ({children})=> {
     const [focusedTab,setFocusedTab] = useState('Chats')
 
     const [longPressChat,setLongPressChat] = useState(false)
+
+    const [selectedChatId,setSelectedChatId] = useState(0)
     
     return (
 
@@ -22,7 +24,9 @@ export const AppProvider = ({children})=> {
                 focusedTab,
                 setFocusedTab,
                 longPressChat,
-                setLongPressChat
+                setLongPressChat,
+                selectedChatId,
+                setSelectedChatId
             }}
         >
             {children}

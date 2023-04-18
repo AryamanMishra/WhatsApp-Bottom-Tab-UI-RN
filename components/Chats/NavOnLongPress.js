@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react'
-import { View,StyleSheet,Pressable } from 'react-native'
+import React, { useEffect, useRef } from 'react'
+import { View,StyleSheet,Pressable,Animated } from 'react-native'
 import BackArrow from 'react-native-vector-icons/Feather'
 import PinIcon from 'react-native-vector-icons/SimpleLineIcons'
 import DeleteIcon from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -12,10 +12,12 @@ import { useBackHandler } from '@react-native-community/hooks'
 
 const NavOnLongPress = ({ navigation })=> {
 
-    const { setLongPressChat,longPressChat } = useGlobalContext()
+    const { setLongPressChat,longPressChat,selectedChatId,setSelectedChatId } = useGlobalContext()
+
 
     const handleBackButton = ()=> {
         setLongPressChat(false)
+        setSelectedChatId(0)
     }
 
     useBackHandler(() => {
@@ -26,9 +28,11 @@ const NavOnLongPress = ({ navigation })=> {
         return false
     })
 
-   
+
     return (
-        <View style={styles.navOnLongPressView}>
+        <Animated.View 
+            style={[styles.navOnLongPressView]}
+        >
             <Pressable
                 style={{marginLeft:6}}
                 onPress={handleBackButton}
@@ -69,7 +73,7 @@ const NavOnLongPress = ({ navigation })=> {
                     color='white'
                 />
             </View>
-        </View>
+        </Animated.View>
     )
 }
 
