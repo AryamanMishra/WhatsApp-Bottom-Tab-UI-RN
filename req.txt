@@ -1,2 +1,1 @@
 add inside chat screen
-add proper height to toValue in animation

@@ -11,11 +11,12 @@ const MutedUpdatesSection = ()=> {
 
     const {showData,setShowData} = useGlobalContext()
 
+    const mutedUpdatessectionRef = useRef(null)
 
 
     const increaseHeight = ()=> {
         Animated.timing(heightValue, {
-            toValue:150,
+            toValue:mutedUpdatessectionRef.current._children.length*75,
             duration:500,
             useNativeDriver:false
         }).start()
@@ -31,6 +32,7 @@ const MutedUpdatesSection = ()=> {
     
     const handlePress = ()=> {
         setShowData(!showData)
+        // console.log(mutedUpdatessectionRef.current._children)
     }
 
 
@@ -79,10 +81,11 @@ const MutedUpdatesSection = ()=> {
                 )
             }
             <Animated.View
-                style={{height:heightValue, opacity:0.55}}
+                ref={mutedUpdatessectionRef}
+                style={{height:heightValue, opacity:0.55}}      
             >
                 <MutedUpdate />
-                <MutedUpdate />
+            
             </Animated.View>
         </View> 
     )
