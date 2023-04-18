@@ -1,2 +1,2 @@
 A Whatsapp like UI only app with a different view, having bottom tabs as navigators instead of top navigators, made using React Native.
-[Installation Link](https://expo.dev/accounts/aryamanm/projects/notwhatsapp/builds/fecc6fde-6614-4e3e-8dd0-60da97202b10)
+[Installation Link](https://expo.dev/accounts/aryamanm/projects/notwhatsapp/builds/69483880-4e33-4b3d-8934-389f71ebe554)
