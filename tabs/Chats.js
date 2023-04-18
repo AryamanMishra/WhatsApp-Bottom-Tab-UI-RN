@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         alignItems:'center'
     },
     newMsgIcon : {
-        backgroundColor:'rgb(40,160,90)',
+        backgroundColor:'rgb(40,160,90)', 
         paddingVertical:18.5,
         paddingHorizontal:18.5,
         borderRadius:50

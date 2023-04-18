@@ -13,18 +13,18 @@ const UtilityIcons = ()=> {
 
     const moveUpAnim = ()=> {
         Animated.timing(initialMoveValue, {
-            toValue:-13,
-            duration:1000,
+            toValue:-12,
+            duration:300,
             useNativeDriver:true,
-            easing:Easing.bounce
+            // easing:Easing.bounce
         }).start()
     }
 
 
     const moveDownAnim = ()=> {
         Animated.timing(initialMoveValue, {
-            toValue:30,
-            duration:250,
+            toValue:40,
+            duration:300,
             useNativeDriver:true
         }).start()
     }
@@ -49,7 +49,7 @@ const UtilityIcons = ()=> {
                     style={styles.editIcon}
                     name='edit'
                     color='#ffe'
-                    size={24}
+                    size={24.5}
                 />
             </Animated.View>
               
