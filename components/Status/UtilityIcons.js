@@ -67,7 +67,7 @@ const UtilityIcons = ()=> {
 const styles = StyleSheet.create({
     iconsView : {
         position:'absolute',
-        top:'80.2%',
+        top:'76.8%',
         right:'4.4%',
         gap:16,
         alignItems:'center',

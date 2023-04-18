@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     }, 
     iconsView : {
         position:'absolute',
-        top:'89%',
+        top:'85.9%',
         right:'4.5%',
         gap:16,
         alignItems:'center'

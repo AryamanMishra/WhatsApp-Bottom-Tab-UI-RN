@@ -47,15 +47,15 @@ const styles = StyleSheet.create({
     },
     iconsView : {
         position:'absolute',
-        top:'88.95%',
+        top:'85.95%',
         right:'4.5%',
         alignItems:'center'
     },
     newMsgIcon : {
         backgroundColor:'rgb(40,160,90)', 
-        paddingVertical:18.5,
+        paddingVertical:18,
         paddingHorizontal:18.5,
-        borderRadius:50
+        borderRadius:50,
     },
 })
 export default Chats
