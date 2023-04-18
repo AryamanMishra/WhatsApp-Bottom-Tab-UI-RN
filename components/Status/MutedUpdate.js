@@ -15,7 +15,7 @@ const MutedUpdate = ()=> {
     const increaseScale = ()=> {
         Animated.timing(scaleValue, {
             toValue:1,
-            duration:300,
+            duration:100,
             useNativeDriver:false
         }).start()
     }
@@ -23,7 +23,7 @@ const MutedUpdate = ()=> {
     const decreaseScale = ()=> {
         Animated.timing(scaleValue, {
             toValue:0,
-            duration:300,
+            duration:100,
             useNativeDriver:false
         }).start()
     }

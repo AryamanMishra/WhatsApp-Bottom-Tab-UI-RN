@@ -3,6 +3,7 @@ import { View,StyleSheet,ScrollView } from 'react-native'
 import Chat from '../components/Chats/Chat'
 import NewMessageIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import EncryptedMsg from '../components/EncryptedMsg'
+import NavOnLongPress from '../components/Chats/NavOnLongPress'
 
 
 const Chats = ()=> {
@@ -10,24 +11,25 @@ const Chats = ()=> {
 
     return (
         <View style={styles.mainChats}>
-                <ScrollView
-                >
-                    <View style={styles.allChats}>
-                        <Chat />
-                        <Chat />
-                        <Chat />
-                        <Chat />
-                        <Chat />
-                        <Chat />
-                        <Chat />
-                        <Chat />
-                        <Chat />
-                        <Chat />
-                    </View>
-                    
-                    <EncryptedMsg tab='Chats'/>
-                    
-                </ScrollView>
+            {/* <NavOnLongPress /> */}
+            <ScrollView
+            >
+                <View style={styles.allChats}>
+                    <Chat />
+                    <Chat />
+                    <Chat />
+                    <Chat />
+                    <Chat />
+                    <Chat />
+                    <Chat />
+                    <Chat />
+                    <Chat />
+                    <Chat />
+                </View>
+                
+                <EncryptedMsg tab='Chats'/>
+                
+            </ScrollView>
             <View style={styles.iconsView}>
                 <NewMessageIcon 
                     name='message-text-outline'

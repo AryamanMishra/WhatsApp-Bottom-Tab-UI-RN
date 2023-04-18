@@ -11,8 +11,10 @@ export const AppProvider = ({children})=> {
 
     const [showData,setShowData] = useState(false)
     
-
     const [focusedTab,setFocusedTab] = useState('Chats')
+
+    const [longPress,setLongPress] = useState(false)
+    
     return (
 
         <AppContext.Provider
@@ -24,7 +26,9 @@ export const AppProvider = ({children})=> {
                 showData,
                 setShowData,
                 focusedTab,
-                setFocusedTab
+                setFocusedTab,
+                longPress,
+                setLongPress
             }}
         >
             {children}

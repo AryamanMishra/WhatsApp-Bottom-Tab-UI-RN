@@ -17,7 +17,7 @@ const MutedUpdatesSection = ()=> {
     const increaseHeight = ()=> {
         Animated.timing(heightValue, {
             toValue:mutedUpdatessectionRef.current._children.length*75,
-            duration:500,
+            duration:350,
             useNativeDriver:false
         }).start()
     }
@@ -25,7 +25,7 @@ const MutedUpdatesSection = ()=> {
     const decreaseHeight = ()=> {
         Animated.timing(heightValue, {
             toValue:0,
-            duration:500,
+            duration:350,
             useNativeDriver:false
         }).start()
     }
@@ -85,7 +85,10 @@ const MutedUpdatesSection = ()=> {
                 style={{height:heightValue, opacity:0.55}}      
             >
                 <MutedUpdate />
-            
+                <MutedUpdate />
+                <MutedUpdate />
+                <MutedUpdate />
+                <MutedUpdate />
             </Animated.View>
         </View> 
     )
