@@ -6,26 +6,32 @@ import Calls from '../tabs/Calls.js';
 import Navbar from './Navbar';
 import CustomTabBar from './CustomTabBar.js';
 import { StatusBar } from 'expo-status-bar';
-import { useGlobalContext } from '../context.js';
-// import NavOnLongPress from './components/Chats/NavOnLongPress.js';
+import { useGlobalContext } from '../contexts/context.js';
+import NavOnLongPress from '../components/Chats/NavOnLongPress';
+
 
 
 const Tab = createBottomTabNavigator()
 
 const NavigatorComp = ()=> {
 
-    const {longPress} = useGlobalContext()
+    const { longPressChat } = useGlobalContext()
     return (
         <NavigationContainer>
             <Tab.Navigator
                 screenOptions={{
                     header: ({ navigation, route, options }) => {
-                        return <Navbar route={route} />;
+                        if (longPressChat) {
+                            return <NavOnLongPress navigation={navigation}/>
+                        }
+                        else {
+                            return <Navbar route={route} />
+                        }
                     },
                 }}
                 tabBar={props=><CustomTabBar {...props}/>}
             >
-                <Tab.Screen name="Chats" component={Chats}/>
+                <Tab.Screen name="Chats" component={Chats} />
                 <Tab.Screen name="Status" component={Status} />
                 <Tab.Screen name="Calls" component={Calls} />
             </Tab.Navigator>

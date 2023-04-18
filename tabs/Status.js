@@ -2,7 +2,6 @@ import React from 'react'
 import { View,StyleSheet,Text, ScrollView } from 'react-native'
 import RecentUpdate from '../components/Status/RecentUpdate'
 import AddStatus from '../components/Status/AddStatus'
-
 import MutedUpdatesSection from '../components/Status/MutedUpdatesSection'
 import UtilityIcons from '../components/Status/UtilityIcons'
 import EncryptedMsg from '../components/EncryptedMsg'

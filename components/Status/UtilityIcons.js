@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react'
 import CameraIcon from 'react-native-vector-icons/FontAwesome'
 import EditIcon from 'react-native-vector-icons/MaterialIcons'
-import { View,StyleSheet,Animated,Easing } from 'react-native'
-import { useGlobalContext } from '../../context'
+import { View,StyleSheet,Animated } from 'react-native'
+import { useGlobalContext } from '../../contexts/context'
 
 
 const UtilityIcons = ()=> {
 
-    const {focusedTab} = useGlobalContext()
+    const { focusedTab } = useGlobalContext()
 
     const initialMoveValue = useRef(new Animated.Value(0)).current
 

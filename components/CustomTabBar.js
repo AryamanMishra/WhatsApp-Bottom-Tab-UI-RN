@@ -3,12 +3,12 @@ import { Text, Pressable, View, StyleSheet } from 'react-native'
 import ChatIcon from 'react-native-vector-icons/Ionicons'
 import StatusIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import CallsIcon from 'react-native-vector-icons/Ionicons'
-import {useGlobalContext} from '../context'
+import {useGlobalContext} from '../contexts/context'
 
 
 const CustomTabBar = ({ state, descriptors, navigation })=> {
 
-    const {setFocusedTab} = useGlobalContext()
+    const { setFocusedTab } = useGlobalContext()
 
     const onPress = (route,isFocused) => {
         const event = navigation.emit({
@@ -61,7 +61,7 @@ const CustomTabBar = ({ state, descriptors, navigation })=> {
                                     <StatusIcon
                                         name='google-circles'
                                         size={26}
-                                        color={isFocused ? 'rgb(0,110,0)' :'rgb(0,150,0)'}
+                                        color={isFocused ? 'rgb(0,110,0)' :'rgb(0,160,0)'}
                                     />
                                 ) :(
                                     isFocused ? (

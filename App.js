@@ -1,4 +1,4 @@
-import { AppProvider } from "./context.js"
+import { AppProvider } from './contexts/context'
 import NavigatorComp from "./components/NavigatorComp.js"
 
 const App = ()=> {
@@ -6,8 +6,7 @@ const App = ()=> {
 	return (
 		<AppProvider>
 			<NavigatorComp />
-		</AppProvider>
-		
+		</AppProvider>	
 	)
 }
 

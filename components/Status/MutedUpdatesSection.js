@@ -1,15 +1,16 @@
 import React, { useEffect, useRef } from 'react'
 import ArrowIcon from 'react-native-vector-icons/MaterialIcons'
 import { View,StyleSheet,Text,Pressable,Animated } from 'react-native'
-import { useGlobalContext } from '../../context'
+import { useGlobalContext } from '../../contexts/context'
 import MutedUpdate from './MutedUpdate'
 
 
 const MutedUpdatesSection = ()=> {
 
+    
     const heightValue = useRef(new Animated.Value(0)).current
 
-    const {showData,setShowData} = useGlobalContext()
+    const { showData,setShowData } = useGlobalContext()
 
     const mutedUpdatessectionRef = useRef(null)
 

@@ -2,14 +2,21 @@ import React from 'react'
 import { View, StyleSheet, Pressable, Text,Image } from 'react-native'
 import testImage from '../../assets/testImage.png'
 import { Alert } from 'react-native'
-
+import { useGlobalContext } from '../../contexts/context'
 
 const Chat = ()=> {
+
+    const { longPressChat,setLongPressChat } = useGlobalContext()
+
+    const handleLongPress = ()=> {
+        setLongPressChat(true)
+    }
+
     return (
         <Pressable 
             style={styles.singleChat}
             android_ripple={{color:'rgba(100,100,100,0.2)'}}
-            onLongPress={()=>Alert.alert('Hi')}
+            onLongPress={handleLongPress}
         >
             <Image 
                 style={styles.profileImage}

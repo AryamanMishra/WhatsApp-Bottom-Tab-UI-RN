@@ -1,13 +1,12 @@
 import React, {useEffect,useRef} from 'react'
 import { View,Text,StyleSheet,Pressable, Animated,Image } from 'react-native'
 import testImage from '../../assets/testImage.png'
-import { useGlobalContext } from '../../context'
-// import { withAnchorPoint } from 'react-native-anchor-point';
+import { useGlobalContext } from '../../contexts/context'
 
 
 const MutedUpdate = ()=> {
 
-    const {showData} = useGlobalContext()
+    const { showData } = useGlobalContext()
 
     const scaleValue = useRef(new Animated.Value(0)).current
 
@@ -27,13 +26,6 @@ const MutedUpdate = ()=> {
             useNativeDriver:false
         }).start()
     }
-
-    // const getTransform = () => {
-    //     let transform = {
-    //         transform: [{scale:scaleValue}],
-    //     };
-    //     return withAnchorPoint(transform, { x: -4, y: -0.5 }, {width:50,height:50});
-    // };
 
 
     useEffect(()=> {

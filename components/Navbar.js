@@ -54,9 +54,9 @@ const styles = StyleSheet.create({
     },
     headerTitle : {
 	    color:"#ffe",
-    	fontSize:19,
+    	fontSize:19.5,
     	letterSpacing:0.3,
-    	paddingLeft:12,
+    	paddingLeft:10,
     }
 })
 
